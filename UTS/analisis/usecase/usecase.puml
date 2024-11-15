@@ -1,0 +1,20 @@
+@startuml usecase
+left to right direction
+
+actor "User " as User
+
+rectangle "Aplikasi Manajemen" {
+    usecase "Login" as UC1
+    usecase "Manage Kategori" as UC2
+    usecase "Manage Supplier" as UC3
+    usecase "Manage Barang" as UC4
+    usecase "View Dashboard" as UC5
+}
+
+User  --> UC1 : "Login"
+User  --> UC2 : "Add/Edit/Delete Kategori"
+User  --> UC3 : "Add/Edit/Delete Supplier"
+User  --> UC4 : "Add/Edit/Delete Barang"
+User  --> UC5 : "View Stats"
+
+@enduml

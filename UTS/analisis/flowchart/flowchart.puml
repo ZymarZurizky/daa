@@ -1,0 +1,30 @@
+@startuml flowchart
+!define RECTANGLE class
+
+RECTANGLE "User " as User
+RECTANGLE "Filament" as Filament
+RECTANGLE "Dashboard" as Dashboard
+RECTANGLE "Kategori Model" as KategoriModel
+RECTANGLE "Supplier Model" as SupplierModel
+RECTANGLE "Barang Model" as BarangModel
+RECTANGLE "Database" as Database
+
+User  -> Filament : Login
+Filament -> Dashboard : Show Dashboard
+Dashboard -> KategoriModel : Fetch Kategori Data
+Dashboard -> SupplierModel : Fetch Supplier Data
+Dashboard -> BarangModel : Fetch Barang Data
+
+User  -> Filament : Manage Kategori
+Filament -> KategoriModel : Create/Update/Delete Kategori
+KategoriModel -> Database : Save Kategori Data
+
+User  -> Filament : Manage Supplier
+Filament -> SupplierModel : Create/Update/Delete Supplier
+SupplierModel -> Database : Save Supplier Data
+
+User  -> Filament : Manage Barang
+Filament -> BarangModel : Create/Update/Delete Barang
+BarangModel -> Database : Save Barang Data
+
+@enduml
